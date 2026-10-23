@@ -12,6 +12,8 @@ El arranque inicializa el contexto de Nest, muestra `Gladio initialized.` y lo c
 
 El siguiente entregable es una matriz de cobertura que permita comprobar qué casas españolas y qué cuotas ofrece realmente cada proveedor. El detector y las notificaciones vienen después de esa comprobación.
 
+La [hoja de ruta hasta 1.0.0](docs/roadmap-1.0.0.md) concreta los pasos, entregables y criterios de aceptación. La versión estable prevista incluye investigación manual, seguimiento y avisos experimentales al móvil; la rentabilidad del método requiere una evaluación independiente.
+
 ## Alcance
 
 - Objetivo de cobertura: todas las casas que ofrezcan legalmente el mercado elegido en España, comprobando la versión española de cada una.

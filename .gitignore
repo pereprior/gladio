@@ -5,6 +5,7 @@ build/
 .env
 data/
 reports/
+docs/
 *.db
 *.db-*
 *.sqlite

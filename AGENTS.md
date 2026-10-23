@@ -33,6 +33,7 @@ La preferencia de cobertura aclarada expresamente es **todas las casas disponibl
 - No hay esquema de datos, migraciones, proveedores contratados, claves configuradas, consultas autenticadas, llamadas a IA, notificaciones ni automatizaciones de cuotas.
 - Se ha realizado una evaluación documental inicial, no una validación de cuotas ejecutables desde España.
 - El siguiente entregable es la prueba de cobertura y presupuesto. No empezar por construir el detector completo, un panel o una cadena de modelos.
+- `docs/roadmap-1.0.0.md` contiene la hoja de ruta propuesta con entregables, dependencias y criterios de aceptación. Solo el paso 0 está implementado; preparar el plan no autoriza ejecutar sus siguientes fases ni cambia la versión actual.
 
 Esta sección debe reflejar los cambios reales en futuras sesiones. No documentar módulos, scripts, comandos o capacidades como existentes antes de crearlos y verificarlos.
 
@@ -247,12 +248,27 @@ Fuentes oficiales para volver a comprobar integraciones y acceso:
 
 ## 10. Ruta de implementación y criterios para avanzar
 
-1. **Documentación y esqueleto — completados inicialmente.** Mantener README y esta guía; la base NestJS está preparada y el arranque solo inicializa y cierra el contexto.
-2. **Cobertura y consumo — pendiente, siguiente trabajo.** Inventario español, matriz y consultas manuales autorizadas. Avanzar solo con mercados equivalentes, datos españoles comprobados y consumo compatible. Si el proveedor no sirve, documentarlo antes de desarrollar el resto.
-3. **Captura local y controles — pendiente.** Cliente de datos, presupuesto persistente, SQLite e informes. Añadir planificación solo cuando se solicite activar esa fase.
-4. **Simulación prospectiva — pendiente.** Propuesta de 6–8 semanas, reglas congeladas y versionadas, sin obligación de emitir señales ni apostar dinero real.
-5. **Avisos experimentales — pendiente.** Incorporar un canal móvil cuando la revisión y la verificación del precio funcionen. Telegram es una opción gratuita para este volumen, sin bot creado: <https://core.telegram.org/bots/faq>.
-6. **Investigación automática o estimación propia — pendiente, fase posterior.** Exigir evaluación y presupuesto explícitos antes de aumentar complejidad o costes.
+La hoja de ruta detallada está en [docs/roadmap-1.0.0.md](docs/roadmap-1.0.0.md). Mantener esta síntesis y el documento alineados; registrar la evidencia antes de dar un paso por completado.
+
+| Paso | Entregable y condición de salida                                                                                                                                | Estado                       |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| 0    | Documentación y esqueleto NestJS ejecutable.                                                                                                                    | Completado                   |
+| 1    | Inventario de casas españolas, matriz documental, alcance del piloto e hipótesis de proveedor y coste.                                                          | Pendiente; siguiente trabajo |
+| 2    | Prueba real de cobertura con registro persistente y control de créditos antes de la primera petición consumible. Resolver cobertura y coste antes del detector. | Pendiente                    |
+| 3    | Contratos, histórico, esquema, migraciones y procedencia recuperable, sin secretos.                                                                             | Pendiente                    |
+| 4    | Captura manual y consulta del histórico por CLI, con errores recuperables y reproducción offline identificada.                                                  | Pendiente                    |
+| 5    | Doce capturas ordinarias 09:00–20:00, reserva del consumo restante, recuperación y estado operativo.                                                            | Pendiente                    |
+| 6    | Calidad de datos, referencias ajustadas por margen y detección reproducible con reglas versionadas.                                                             | Pendiente                    |
+| 7    | Informes y registro de investigación manual, evidencia contraria, pendientes y caducidad.                                                                       | Pendiente                    |
+| 8    | Seguimiento separado de simulaciones, operaciones confirmadas, resultados, aportaciones y exposición.                                                           | Pendiente                    |
+| 9    | Verificación final y aviso experimental al móvil con vigencia y entrega persistentes.                                                                           | Pendiente                    |
+| 10   | Piloto prospectivo propuesto de 6–8 semanas, evaluación diferenciada por versión de reglas y fallos documentados.                                               | Pendiente                    |
+| 11   | Instalación limpia, copias, restauración, recuperación de fallos y mantenimiento ensayados.                                                                     | Pendiente                    |
+| 12   | Candidata de publicación, aceptación del alcance y cierre de 1.0.0 con documentación y verificaciones completas.                                                | Pendiente                    |
+
+La 1.0.0 propuesta incluye investigación manual y avisos experimentales, sin exigir API de IA ni rentabilidad demostrada. La cobertura completa de casas españolas sigue siendo requisito: si no es viable con el presupuesto, resolver explícitamente proveedor, coste o alcance con el usuario antes de dar esa versión por cumplida. Una matriz con ausencias no satisface por sí sola la cobertura completa.
+
+La prueba inicial de datos necesita protección mínima persistente de créditos; no realizar consultas consumibles desprotegidas con la intención de añadirla después. Añadir planificación e integraciones externas solo cuando formen parte del trabajo autorizado. Telegram sigue siendo una opción de canal, sin integración elegida: <https://core.telegram.org/bots/faq>.
 
 La simulación medirá cobertura por casa y evento, frescura, huecos de captura, discrepancias que sobreviven a comprobación española, tiempo de revisión, caducidad, duplicados, consumo, descartes y resultados completos.
 
@@ -261,6 +277,10 @@ Las apuestas simuladas deben usar precios comprobados al revisar, sin asumir eje
 Conservar todos los candidatos y motivos de descarte, también cuando se cambien reglas. No evaluar solo ganadoras, no atribuir habilidad a una racha breve y no ajustar usando los resultados que luego se presentan como validación.
 
 El periodo propuesto permite evaluar operación y utilidad; no demuestra por sí solo rentabilidad. Una estimación propia de probabilidades requerirá método explícito, calibración y evaluación temporal fuera de la muestra de ajuste, además de cuantificar incertidumbre.
+
+Empezar a guardar datos cuando funcione la captura y a observar candidatas cuando exista el detector; no esperar a terminar notificaciones. Propuesta de aceptación operativa: al menos 14 días de operación prevista sin incidencias críticas, dentro del periodo evaluable o después de él, con disponibilidad y huecos registrados; una incidencia crítica exige corregirla y volver a comprobar esa ventana. Gasto no controlado, corrupción o pérdida de datos, exposición de credenciales y avisos emitidos incumpliendo sus criterios son incidencias críticas. La ausencia de candidatas no es una incidencia.
+
+Antes de la parte monetaria, concretar la interpretación de aportaciones y límites con el usuario. No rechazar ni ocultar una operación real ya realizada por exceder un límite: registrarla y marcar el incumplimiento. Después de restaurar una copia antigua, reconciliar el gasto con el proveedor; no reponer créditos ya consumidos ni reenviar avisos caducados. Las entregas de resultado incierto no se reintentan a ciegas.
 
 ## 11. Pautas de implementación y verificación
 
@@ -311,12 +331,13 @@ El periodo propuesto permite evaluar operación y utilidad; no demuestra por sí
 
 ## 12. Decisiones y pendientes que no deben perderse
 
-| Fecha      | Registro                                                                                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 2026-10-23 | El usuario define Gladio como sistema personal, de bajo coste, con validación de datos anterior al detector y sin operaciones de dinero automáticas.                                                               |
-| 2026-10-23 | El usuario aclara que quiere abarcar todas las casas disponibles en España. No reducir el objetivo a sus cuentas actuales o al subconjunto de un proveedor.                                                        |
-| 2026-10-23 | La evaluación pública no acredita cobertura española completa de The Odds API. Proveedor definitivo y parámetros del piloto siguen pendientes.                                                                     |
-| 2026-10-23 | El usuario solicita primero README y AGENTS, y autoriza mantener AGENTS como contexto suficiente para futuros chats.                                                                                               |
-| 2026-10-23 | El usuario pide preparar el esqueleto basándose en LiLi-api. Se adopta su base NestJS/TypeScript/ESM/pnpm y sus herramientas de calidad, con arranque sin HTTP y sin integrar todavía proveedores ni persistencia. |
+| Fecha      | Registro                                                                                                                                                                                                                               |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-23 | El usuario define Gladio como sistema personal, de bajo coste, con validación de datos anterior al detector y sin operaciones de dinero automáticas.                                                                                   |
+| 2026-10-23 | El usuario aclara que quiere abarcar todas las casas disponibles en España. No reducir el objetivo a sus cuentas actuales o al subconjunto de un proveedor.                                                                            |
+| 2026-10-23 | La evaluación pública no acredita cobertura española completa de The Odds API. Proveedor definitivo y parámetros del piloto siguen pendientes.                                                                                         |
+| 2026-10-23 | El usuario solicita primero README y AGENTS, y autoriza mantener AGENTS como contexto suficiente para futuros chats.                                                                                                                   |
+| 2026-10-23 | El usuario pide preparar el esqueleto basándose en LiLi-api. Se adopta su base NestJS/TypeScript/ESM/pnpm y sus herramientas de calidad, con arranque sin HTTP y sin integrar todavía proveedores ni persistencia.                     |
+| 2026-10-23 | El usuario solicita organizar el desarrollo hasta 1.0.0. Se documenta una hoja de ruta propuesta de 12 pasos pendientes y el esqueleto completado, con criterios de aceptación y revisión manual dentro de la primera versión estable. |
 
 Pendientes inmediatos: inventario español y correspondencia con proveedores; prueba real de cuotas y consumo cuando exista acceso autorizado; resolver la viabilidad de cobertura antes de implementar el resto. No hacen falta más preguntas para preparar esa fase con la información actual.
