@@ -3,6 +3,9 @@ dist/
 coverage/
 build/
 .env
+.env.*
+!.env.example
+!.env.test
 data/
 reports/
 docs/

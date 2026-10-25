@@ -1,6 +1,6 @@
 # Guía de desarrollo y mantenimiento de Gladio
 
-Última actualización: **2026-10-23**.
+Última actualización: **2026-10-25**.
 
 Este documento es el punto de entrada para trabajar en el repositorio sin acceso a conversaciones anteriores. El usuario ha pedido expresamente que el agente lo mantenga actualizado con el contexto, las decisiones y las pautas relevantes para el desarrollo y mantenimiento, de modo que un chat nuevo pueda continuar meses después leyendo este archivo.
 
@@ -328,6 +328,17 @@ Antes de la parte monetaria, concretar la interpretación de aportaciones y lím
 - `pnpm-workspace.yaml` deshabilita los scripts de instalación de `@nestjs/core` y `esbuild`; mantener explícita cualquier autorización futura de scripts de dependencias.
 - No precargar `.env` con flags de Node además de `ConfigModule`: la selección del entorno pertenece a `src/config/environment.config.ts`. `NODE_ENV` debe establecerse antes de arrancar para elegir un archivo distinto.
 - `.env.example` y `.env.test` se versionan y solo contienen configuración no sensible. Las demás variantes `.env.*`, datos, informes, bases SQLite, artefactos y dependencias están ignorados. No introducir secretos en los archivos versionados.
+- Prettier excluye las skills importadas de terceros `nestjs-best-practices`, `security-threat-model` y `vitest` para conservar su formato original. Las skills locales `gladio-modules` y `gladio-testing` sí participan en la comprobación de formato.
+
+### Skills locales
+
+- `.agents/skills/gladio-modules/` y `.agents/skills/gladio-testing/` están adaptadas
+  a Gladio, incluidas sus referencias y metadatos. Se invocan como
+  `gladio-modules` y `gladio-testing` y conservan las pautas heredadas de
+  organización y pruebas.
+- Sus ejemplos vigentes apuntan al esqueleto local. Las instrucciones sobre HTTP,
+  sesiones y persistencia son condicionales; no acreditan componentes existentes
+  ni autorizan introducir Prisma, autenticación o infraestructura de LiLi.
 
 ## 12. Decisiones y pendientes que no deben perderse
 

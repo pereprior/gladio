@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Gladio Modules'
+  short_description: 'Módulos funcionales según los patrones de Gladio'
+  default_prompt: 'Usa $gladio-modules para implementar o ampliar un módulo de Gladio con servicios por operación y fronteras explícitas, con HTTP solo si el encargo lo requiere.'

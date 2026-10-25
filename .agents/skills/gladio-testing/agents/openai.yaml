@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Gladio Testing'
+  short_description: 'Tests unitarios y E2E según los patrones de Gladio'
+  default_prompt: 'Usa $gladio-testing para crear o revisar tests de Gladio que protejan comportamientos reales y sigan los patrones del proyecto.'
